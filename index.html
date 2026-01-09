@@ -181,7 +181,20 @@ canvas{
 <div id="r4" class="result"></div>
 </div>
 
+<!-- FASE 5 -->
+<div class="card">
+<h2>🧭 Fase 5 – Classificação</h2>
 
+<select id="q5">
+<option value="">Selecione</option>
+<option value="errado">Retrógrado e retardado</option>
+<option value="certo">Progressivo e acelerado</option>
+<option value="errado">Progressivo e retardado</option>
+</select>
+
+<button onclick="fase5()">Responder</button>
+<div id="r5" class="result"></div>
+</div>
 
 <button onclick="resetar()">🔄 Resetar Simulação</button>
 
@@ -199,7 +212,7 @@ function atualizar(){
 function fase1(){
     let r = document.getElementById("r1");
     if(document.getElementById("q1").value==="certo"){
-        pontos+=10;
+        pontos+=20;
         r.innerHTML="✅ Correto!";
     }else{
         r.innerHTML="❌ Em relação ao banco, está em repouso.";
@@ -213,7 +226,7 @@ function fase2(){
     let di = +dist.value;
     let r = document.getElementById("r2");
     if(d===0 && di===10){
-        pontos+=10;
+        pontos+=20;
         r.innerHTML="✅ Perfeito!";
     }else{
         r.innerHTML="❌ Reveja deslocamento e distância.";
@@ -225,7 +238,7 @@ function fase2(){
 function fase3(){
     let vm = d3.value/t3.value;
     let r = document.getElementById("r3");
-    pontos+=10;
+    pontos+=20;
     r.innerHTML=`🚗 v<sub>m</sub> = ${vm.toFixed(1)} km/h`;
     r.style.display="block";
     atualizar();
@@ -234,7 +247,7 @@ function fase3(){
 function fase4(){
     let a = (vf.value-vi.value)/t4.value;
     let r = document.getElementById("r4");
-    pontos+=10;
+    pontos+=20;
     r.innerHTML=`⚡ a = ${a.toFixed(2)} m/s²`;
     r.style.display="block";
     atualizar();
@@ -255,7 +268,7 @@ function verificaConceito2(){
 function fase5(){
     let r = document.getElementById("r5");
     if(q5.value==="certo"){
-        pontos+=10;
+        pontos+=20;
         r.innerHTML="🎉 Excelente!";
     }else{
         r.innerHTML="❌ Pense no sinal da velocidade.";
